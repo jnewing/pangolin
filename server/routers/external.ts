@@ -13,6 +13,7 @@ import * as accessToken from "./accessToken";
 import * as idp from "./idp";
 import * as license from "./license";
 import * as apiKeys from "./apiKeys";
+import * as session from "./session";
 import HttpCode from "@server/types/HttpCode";
 import {
     verifyAccessTokenAccess,
@@ -481,6 +482,11 @@ authenticated.delete(
     verifyUserIsServerAdmin,
     user.adminRemoveUser
 );
+
+// Resource Session Admin Routes
+authenticated.get("/admin/resource-sessions", verifyUserIsServerAdmin, session.listResourceSessions);
+authenticated.delete("/admin/resource-sessions/:sessionId", verifyUserIsServerAdmin, session.deleteResourceSession);
+authenticated.post("/admin/resource-sessions/bulk-delete", verifyUserIsServerAdmin, session.bulkDeleteResourceSessions);
 
 authenticated.put(
     "/org/:orgId/user",

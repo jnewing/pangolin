@@ -8,7 +8,8 @@ import {
     Combine,
     Fingerprint,
     KeyRound,
-    TicketCheck
+    TicketCheck,
+    Clock
 } from "lucide-react";
 
 export const orgLangingNavItems: SidebarNavItem[] = [
@@ -82,6 +83,11 @@ export const adminNavItems: SidebarNavItem[] = [
         title: "sidebarAllUsers",
         href: "/admin/users",
         icon: <Users className="h-4 w-4" />
+    },
+    {
+        title: "sidebarResourceSessions",
+        href: "/admin/resource-sessions",
+        icon: <Clock className="h-4 w-4" />
     },
     {
         title: "sidebarApiKeys",
