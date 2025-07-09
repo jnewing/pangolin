@@ -40,6 +40,11 @@ export const orgNavItems: SidebarNavItem[] = [
         icon: <Waypoints className="h-4 w-4" />
     },
     {
+        title: "sidebarResourceSessions",
+        href: "/{orgId}/settings/resource-sessions",
+        icon: <Clock className="h-4 w-4" />
+    },
+    {
         title: "sidebarAccessControl",
         href: "/{orgId}/settings/access",
         icon: <Users className="h-4 w-4" />,

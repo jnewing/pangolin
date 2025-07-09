@@ -488,6 +488,11 @@ authenticated.get("/admin/resource-sessions", verifyUserIsServerAdmin, session.l
 authenticated.delete("/admin/resource-sessions/:sessionId", verifyUserIsServerAdmin, session.deleteResourceSession);
 authenticated.post("/admin/resource-sessions/bulk-delete", verifyUserIsServerAdmin, session.bulkDeleteResourceSessions);
 
+// Organization Resource Session Routes
+authenticated.get("/org/:orgId/resource-sessions", verifyOrgAccess, session.listOrgResourceSessions);
+authenticated.delete("/org/:orgId/resource-sessions/:sessionId", verifyOrgAccess, session.deleteOrgResourceSession);
+authenticated.post("/org/:orgId/resource-sessions/bulk-delete", verifyOrgAccess, session.bulkDeleteOrgResourceSessions);
+
 authenticated.put(
     "/org/:orgId/user",
     verifyOrgAccess,
